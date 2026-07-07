@@ -2,109 +2,643 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David ShopNova</title>
 
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6fb;
-        }
+<title>David ShopNova</title>
 
-        .hero {
-            background: #0d6efd;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
 
-        .card {
-            transition: 0.3s;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .card:hover {
-            transform: scale(1.05);
-        }
 
-        footer {
-            background: #0d1b2a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+<!-- Archivo de estilos propio -->
+<link rel="stylesheet" href="style.css">
+
+
 </head>
+
 
 <body>
 
-<!-- NAVBAR -->
+
+
+<!-- =========================================================
+     BASE.HTML
+
+     Esta sección representa la plantilla principal del sistema.
+     En una futura integración con Flask se convertiría en:
+
+     base.html
+
+     Contendría elementos reutilizables como:
+     encabezado
+     navegación
+     contenido dinámico
+     pie de página
+========================================================= -->
+
+
+
+
+
+<!-- =========================================================
+     HEADER / ENCABEZADO
+
+     Sección reutilizable para mostrar la identidad del sitio
+========================================================= -->
+
+
+<header class="hero">
+
+
+<div class="container">
+
+
+<h1 class="display-4">
+David ShopNova
+</h1>
+
+
+<p class="lead">
+Compra y vende productos de manera rápida,
+segura y moderna.
+</p>
+
+
+<a href="#productos" class="btn btn-light mt-3">
+Ver productos
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<!-- =========================================================
+     NAVBAR
+
+     Esta sección posteriormente podría convertirse en:
+
+     navbar.html
+
+     para reutilizarla en diferentes páginas
+========================================================= -->
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">ShopNova</a>
-    </div>
+
+
+<div class="container">
+
+
+<a class="navbar-brand" href="#">
+ShopNova
+</a>
+
+
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+
+
+<div class="collapse navbar-collapse" id="menu">
+
+
+<ul class="navbar-nav ms-auto">
+
+
+<li class="nav-item">
+<a class="nav-link" href="#inicio">
+Inicio
+</a>
+</li>
+
+
+
+<li class="nav-item">
+<a class="nav-link" href="#productos">
+Productos
+</a>
+</li>
+
+
+
+<li class="nav-item">
+<a class="nav-link" href="#registro">
+Registro
+</a>
+</li>
+
+
+
+<li class="nav-item">
+<a class="nav-link" href="#contacto">
+Contacto
+</a>
+</li>
+
+
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
+
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Bienvenido a David ShopNova</h1>
-    <p>Compra y vende productos de forma moderna</p>
+
+
+
+
+
+
+<!-- =========================================================
+     CONTENIDO PRINCIPAL
+
+     En Flask representaría:
+
+     {% block content %}
+
+     Aquí se cargaría información dinámica desde Python,
+     base de datos o APIs.
+========================================================= -->
+
+
+
+<main>
+
+
+
+
+<!-- PRESENTACIÓN -->
+
+
+<section id="inicio" class="container my-5">
+
+
+<div class="text-center">
+
+
+<h2>
+Nuestra plataforma
+</h2>
+
+
+<p>
+ShopNova es un espacio digital donde los usuarios
+pueden conocer productos disponibles y registrar
+nuevos artículos mediante formularios dinámicos.
+</p>
+
+
+</div>
+
+
 </section>
 
-<!-- SERVICIOS -->
+
+
+
+
+
+
+
+
+<!-- =========================================================
+     PRODUCTOS DINÁMICOS
+
+     JavaScript generará automáticamente las tarjetas.
+
+     No se escribirán manualmente los productos.
+========================================================= -->
+
+
+
+<section id="productos" class="container my-5">
+
+
+<h2 class="text-center mb-4">
+Productos disponibles
+</h2>
+
+
+
+<div class="row" id="contenedorProductos">
+
+<!--
+Aquí aparecerán los productos generados
+desde JavaScript utilizando arreglos de objetos.
+-->
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================================================
+     REGISTRO DE NUEVOS DATOS
+
+     El formulario permitirá ingresar nuevos registros
+     y mostrarlos dinámicamente.
+========================================================= -->
+
+
+<section id="registro" class="container my-5">
+
+
+<h2 class="text-center mb-4">
+Registrar producto
+</h2>
+
+
+
+
+<div class="row justify-content-center">
+
+
+<div class="col-md-8">
+
+
+
+<form id="formularioProducto"
+class="card p-4 shadow">
+
+
+
+
+
+<label class="form-label">
+Nombre del producto
+</label>
+
+
+<input 
+type="text"
+id="nombreProducto"
+class="form-control mb-3"
+placeholder="Ejemplo: Laptop">
+
+
+<div id="errorNombre"
+class="text-danger mb-2">
+</div>
+
+
+
+
+
+
+<label class="form-label">
+Categoría
+</label>
+
+
+<input 
+type="text"
+id="categoriaProducto"
+class="form-control mb-3"
+placeholder="Ejemplo: Tecnología">
+
+
+
+<div id="errorCategoria"
+class="text-danger mb-2">
+</div>
+
+
+
+
+
+
+<label class="form-label">
+Estado
+</label>
+
+
+<select 
+id="estadoProducto"
+class="form-control mb-3">
+
+
+<option value="">
+Seleccione estado
+</option>
+
+
+<option value="Disponible">
+Disponible
+</option>
+
+
+<option value="Agotado">
+Agotado
+</option>
+
+
+
+</select>
+
+
+
+<div id="errorEstado"
+class="text-danger mb-2">
+</div>
+
+
+
+
+
+
+
+<button 
+class="btn btn-primary w-100">
+
+Guardar producto
+
+</button>
+
+
+
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================================================
+     RESULTADOS DINÁMICOS
+
+     Aquí se mostrarán mensajes dependiendo
+     del estado de los datos.
+========================================================= -->
+
+
 <section class="container my-5">
-    <h2 class="text-center">Servicios</h2>
+
+
+<h2 class="text-center">
+Registro generado
+</h2>
+
+
+
+<div id="mensajeEstado"
+class="alert alert-info">
+
+Esperando información...
+
+</div>
+
+
+
+<div id="listaRegistros"
+class="row">
+
+</div>
+
+
+
 </section>
 
-<!-- CONTACTO -->
-<section class="container my-5">
-    <h2 class="text-center mb-4">Contacto</h2>
 
-    <div class="row">
 
-        <div class="col-md-5">
-            <p><strong>Correo:</strong> david198900@gmail.com</p>
-            <p><strong>Teléfono:</strong> 0999017665</p>
-        </div>
 
-        <div class="col-md-7">
 
-            <form id="formulario">
 
-                <input id="nombre" class="form-control my-2" placeholder="Nombre">
-                <div class="invalid-feedback">Mínimo 3 caracteres</div>
 
-                <input id="correo" class="form-control my-2" placeholder="Correo">
-                <div class="invalid-feedback">Correo inválido</div>
 
-                <input id="asunto" class="form-control my-2" placeholder="Asunto">
-                <div class="invalid-feedback">Obligatorio</div>
 
-                <textarea id="mensaje" class="form-control my-2" placeholder="Mensaje"></textarea>
-                <div class="invalid-feedback">Mínimo 10 caracteres</div>
 
-                <button class="btn btn-primary w-100">Enviar</button>
+<!-- =========================================================
+     CONTACTO
 
-            </form>
+     Conservación de validaciones trabajadas
+     anteriormente.
+========================================================= -->
 
-        </div>
 
-    </div>
+<section id="contacto"
+class="container my-5">
+
+
+<h2 class="text-center mb-4">
+Contacto
+</h2>
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-5">
+
+
+<p>
+<strong>Correo:</strong>
+david198900@gmail.com
+</p>
+
+
+<p>
+<strong>Teléfono:</strong>
+0999017665
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="col-md-7">
+
+
+<form id="formularioContacto">
+
+
+
+<input 
+id="nombre"
+class="form-control my-2"
+placeholder="Nombre">
+
+
+
+<div class="invalid-feedback">
+Mínimo 3 caracteres
+</div>
+
+
+
+
+
+<input 
+id="correo"
+class="form-control my-2"
+placeholder="Correo">
+
+
+
+<div class="invalid-feedback">
+Correo inválido
+</div>
+
+
+
+
+
+<input 
+id="asunto"
+class="form-control my-2"
+placeholder="Asunto">
+
+
+
+<div class="invalid-feedback">
+Obligatorio
+</div>
+
+
+
+
+
+
+<textarea 
+id="mensaje"
+class="form-control my-2"
+placeholder="Mensaje">
+
+</textarea>
+
+
+
+
+<div class="invalid-feedback">
+Mínimo 10 caracteres
+</div>
+
+
+
+
+<button class="btn btn-success w-100">
+
+Enviar mensaje
+
+</button>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+</div>
+
+
 </section>
 
-<!-- FOOTER -->
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- =========================================================
+     FOOTER
+
+     En Flask podría convertirse en:
+
+     footer.html
+========================================================= -->
+
+
 <footer>
-    <p>Estudiante: Cristian David Chiquimba Mena</p>
-    <p>2026</p>
+
+
+<p>
+Estudiante: Cristian David Chiquimba Mena
+</p>
+
+
+<p>
+Proyecto Desarrollo de Aplicaciones Web - 2026
+</p>
+
+
 </footer>
+
+
+
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- JavaScript propio -->
 
 <script src="script.js"></script>
 
+
+
 </body>
+
 </html>
