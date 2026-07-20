@@ -2,642 +2,1086 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>David ShopNova</title>
+    <meta
+        name="description"
+        content="David ShopNova, plataforma digital para registrar, visualizar y administrar productos."
+    >
 
+    <title>David ShopNova | Catálogo de productos</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
+    <!-- Iconos de Bootstrap -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-<!-- Archivo de estilos propio -->
-<link rel="stylesheet" href="style.css">
-
-
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- =====================================================
+         BARRA DE NAVEGACIÓN
+    ====================================================== -->
+
+    <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm"
+        aria-label="Navegación principal"
+    >
+        <div class="container">
+
+            <a
+                class="navbar-brand fw-bold d-flex align-items-center gap-2"
+                href="#inicio"
+            >
+                <i class="bi bi-bag-check-fill"></i>
+                David ShopNova
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal"
+                aria-expanded="false"
+                aria-label="Mostrar menú de navegación"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal"
+            >
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="#inicio"
+                        >
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#productos"
+                        >
+                            Productos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#registro"
+                        >
+                            Registrar
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#registros"
+                        >
+                            Registros
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#contacto"
+                        >
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         ENCABEZADO PRINCIPAL
+    ====================================================== -->
+
+    <header
+        id="inicio"
+        class="hero d-flex align-items-center"
+    >
+        <div class="container py-5">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-12 col-lg-7">
 
+                    <span class="badge text-bg-light mb-3 px-3 py-2">
+                        Proyecto Integrador · Semana 8
+                    </span>
 
-<!-- =========================================================
-     BASE.HTML
+                    <h1 class="display-4 fw-bold">
+                        Compra, registra y descubre productos en
+                        <span class="text-warning">David ShopNova</span>
+                    </h1>
 
-     Esta sección representa la plantilla principal del sistema.
-     En una futura integración con Flask se convertiría en:
+                    <p class="lead mt-3 mb-4">
+                        Una plataforma digital moderna para visualizar
+                        productos, registrar nuevos artículos y gestionar
+                        información de forma rápida, organizada y responsiva.
+                    </p>
 
-     base.html
+                    <div class="d-flex flex-column flex-sm-row gap-3">
 
-     Contendría elementos reutilizables como:
-     encabezado
-     navegación
-     contenido dinámico
-     pie de página
-========================================================= -->
+                        <a
+                            href="#productos"
+                            class="btn btn-light btn-lg px-4"
+                        >
+                            <i class="bi bi-grid-fill me-2"></i>
+                            Ver productos
+                        </a>
 
+                        <a
+                            href="#registro"
+                            class="btn btn-outline-light btn-lg px-4"
+                        >
+                            <i class="bi bi-plus-circle me-2"></i>
+                            Registrar producto
+                        </a>
 
+                    </div>
 
+                </div>
 
+                <div class="col-12 col-lg-5 text-center">
 
-<!-- =========================================================
-     HEADER / ENCABEZADO
+                    <div class="hero-icon shadow-lg">
+                        <i class="bi bi-cart-check-fill"></i>
+                    </div>
 
-     Sección reutilizable para mostrar la identidad del sitio
-========================================================= -->
+                </div>
 
+            </div>
 
-<header class="hero">
+        </div>
+    </header>
 
 
-<div class="container">
+    <main>
 
+        <!-- =================================================
+             PRESENTACIÓN
+        ================================================== -->
 
-<h1 class="display-4">
-David ShopNova
-</h1>
+        <section class="py-5 bg-light">
 
+            <div class="container">
 
-<p class="lead">
-Compra y vende productos de manera rápida,
-segura y moderna.
-</p>
+                <div class="row justify-content-center">
 
+                    <div class="col-12 col-lg-9 text-center">
 
-<a href="#productos" class="btn btn-light mt-3">
-Ver productos
-</a>
+                        <span class="text-primary fw-semibold">
+                            NUESTRA PLATAFORMA
+                        </span>
 
+                        <h2 class="fw-bold mt-2">
+                            Una experiencia sencilla, moderna y adaptable
+                        </h2>
 
-</div>
+                        <p class="text-secondary mt-3 mb-0">
+                            ShopNova permite visualizar productos generados
+                            dinámicamente con JavaScript, registrar nuevos
+                            artículos mediante formularios validados y consultar
+                            información adicional utilizando componentes de
+                            Bootstrap.
+                        </p>
 
+                    </div>
 
-</header>
+                </div>
 
+            </div>
 
+        </section>
 
 
+        <!-- =================================================
+             PRODUCTOS DINÁMICOS
+        ================================================== -->
 
-<!-- =========================================================
-     NAVBAR
+        <section
+            id="productos"
+            class="py-5"
+        >
+            <div class="container">
 
-     Esta sección posteriormente podría convertirse en:
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4"
+                >
+                    <div>
+                        <span class="text-primary fw-semibold">
+                            CATÁLOGO
+                        </span>
 
-     navbar.html
+                        <h2 class="fw-bold mb-1">
+                            Productos disponibles
+                        </h2>
 
-     para reutilizarla en diferentes páginas
-========================================================= -->
+                        <p class="text-secondary mb-0">
+                            Los productos se generan dinámicamente desde JavaScript.
+                        </p>
+                    </div>
 
+                    <button
+                        type="button"
+                        id="btnActualizarProductos"
+                        class="btn btn-outline-primary"
+                    >
+                        <i class="bi bi-arrow-clockwise me-2"></i>
+                        Actualizar catálogo
+                    </button>
+                </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
+                <!-- Alerta general de productos -->
 
-<div class="container">
+                <div
+                    id="alertaProductos"
+                    class="alert alert-info d-none"
+                    role="alert"
+                ></div>
 
 
-<a class="navbar-brand" href="#">
-ShopNova
-</a>
+                <!-- Spinner de carga -->
 
+                <div
+                    id="spinnerProductos"
+                    class="text-center py-5 d-none"
+                    aria-live="polite"
+                >
+                    <div
+                        class="spinner-border text-primary"
+                        role="status"
+                    >
+                        <span class="visually-hidden">
+                            Cargando productos...
+                        </span>
+                    </div>
 
+                    <p class="mt-3 text-secondary">
+                        Cargando productos...
+                    </p>
+                </div>
 
-<button class="navbar-toggler"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
 
-<span class="navbar-toggler-icon"></span>
+                <!-- Productos generados por JavaScript -->
 
-</button>
+                <div
+                    class="row g-4"
+                    id="contenedorProductos"
+                >
+                    <!-- Las tarjetas serán creadas desde script.js -->
+                </div>
 
+            </div>
+        </section>
 
 
+        <!-- =================================================
+             FORMULARIO DE REGISTRO
+        ================================================== -->
 
-<div class="collapse navbar-collapse" id="menu">
+        <section
+            id="registro"
+            class="py-5 bg-light"
+        >
+            <div class="container">
 
+                <div class="row justify-content-center">
 
-<ul class="navbar-nav ms-auto">
+                    <div class="col-12 col-lg-9">
 
+                        <div class="card border-0 shadow-lg">
 
-<li class="nav-item">
-<a class="nav-link" href="#inicio">
-Inicio
-</a>
-</li>
+                            <div class="card-body p-4 p-md-5">
 
+                                <div class="text-center mb-4">
 
+                                    <span class="text-primary fw-semibold">
+                                        NUEVO REGISTRO
+                                    </span>
 
-<li class="nav-item">
-<a class="nav-link" href="#productos">
-Productos
-</a>
-</li>
+                                    <h2 class="fw-bold mt-2">
+                                        Registrar producto
+                                    </h2>
 
+                                    <p class="text-secondary">
+                                        Complete correctamente todos los campos.
+                                    </p>
 
+                                </div>
 
-<li class="nav-item">
-<a class="nav-link" href="#registro">
-Registro
-</a>
-</li>
 
+                                <!-- Alerta del formulario -->
 
+                                <div
+                                    id="mensajeEstado"
+                                    class="alert alert-info"
+                                    role="alert"
+                                >
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    Esperando información del producto.
+                                </div>
 
-<li class="nav-item">
-<a class="nav-link" href="#contacto">
-Contacto
-</a>
-</li>
 
+                                <form
+                                    id="formularioProducto"
+                                    novalidate
+                                >
 
+                                    <div class="row g-3">
 
-</ul>
+                                        <!-- Nombre -->
 
+                                        <div class="col-12 col-md-6">
 
-</div>
+                                            <label
+                                                for="nombreProducto"
+                                                class="form-label fw-semibold"
+                                            >
+                                                Nombre del producto
+                                            </label>
 
+                                            <div class="input-group">
 
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-box-seam"></i>
+                                                </span>
 
-</div>
+                                                <input
+                                                    type="text"
+                                                    id="nombreProducto"
+                                                    class="form-control"
+                                                    placeholder="Ejemplo: Laptop Lenovo"
+                                                    autocomplete="off"
+                                                >
 
+                                            </div>
 
-</nav>
+                                            <div
+                                                id="errorNombre"
+                                                class="text-danger small mt-1"
+                                            ></div>
 
+                                        </div>
 
 
+                                        <!-- Categoría -->
 
+                                        <div class="col-12 col-md-6">
 
+                                            <label
+                                                for="categoriaProducto"
+                                                class="form-label fw-semibold"
+                                            >
+                                                Categoría
+                                            </label>
 
+                                            <div class="input-group">
 
-<!-- =========================================================
-     CONTENIDO PRINCIPAL
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-tags"></i>
+                                                </span>
 
-     En Flask representaría:
+                                                <input
+                                                    type="text"
+                                                    id="categoriaProducto"
+                                                    class="form-control"
+                                                    placeholder="Ejemplo: Tecnología"
+                                                    autocomplete="off"
+                                                >
 
-     {% block content %}
+                                            </div>
 
-     Aquí se cargaría información dinámica desde Python,
-     base de datos o APIs.
-========================================================= -->
+                                            <div
+                                                id="errorCategoria"
+                                                class="text-danger small mt-1"
+                                            ></div>
 
+                                        </div>
 
 
-<main>
+                                        <!-- Precio -->
 
+                                        <div class="col-12 col-md-6">
 
+                                            <label
+                                                for="precioProducto"
+                                                class="form-label fw-semibold"
+                                            >
+                                                Precio
+                                            </label>
 
+                                            <div class="input-group">
 
-<!-- PRESENTACIÓN -->
+                                                <span class="input-group-text">
+                                                    $
+                                                </span>
 
+                                                <input
+                                                    type="number"
+                                                    id="precioProducto"
+                                                    class="form-control"
+                                                    placeholder="0.00"
+                                                    min="0"
+                                                    step="0.01"
+                                                >
 
-<section id="inicio" class="container my-5">
+                                            </div>
 
+                                            <div
+                                                id="errorPrecio"
+                                                class="text-danger small mt-1"
+                                            ></div>
 
-<div class="text-center">
+                                        </div>
 
 
-<h2>
-Nuestra plataforma
-</h2>
+                                        <!-- Estado -->
 
+                                        <div class="col-12 col-md-6">
 
-<p>
-ShopNova es un espacio digital donde los usuarios
-pueden conocer productos disponibles y registrar
-nuevos artículos mediante formularios dinámicos.
-</p>
+                                            <label
+                                                for="estadoProducto"
+                                                class="form-label fw-semibold"
+                                            >
+                                                Estado
+                                            </label>
 
+                                            <select
+                                                id="estadoProducto"
+                                                class="form-select"
+                                            >
+                                                <option value="">
+                                                    Seleccione un estado
+                                                </option>
 
-</div>
+                                                <option value="Disponible">
+                                                    Disponible
+                                                </option>
 
+                                                <option value="Agotado">
+                                                    Agotado
+                                                </option>
+                                            </select>
 
-</section>
+                                            <div
+                                                id="errorEstado"
+                                                class="text-danger small mt-1"
+                                            ></div>
 
+                                        </div>
 
 
+                                        <!-- Descripción -->
 
+                                        <div class="col-12">
 
+                                            <label
+                                                for="descripcionProducto"
+                                                class="form-label fw-semibold"
+                                            >
+                                                Descripción
+                                            </label>
 
+                                            <textarea
+                                                id="descripcionProducto"
+                                                class="form-control"
+                                                rows="3"
+                                                placeholder="Escriba una descripción breve del producto"
+                                            ></textarea>
 
+                                            <div
+                                                id="errorDescripcion"
+                                                class="text-danger small mt-1"
+                                            ></div>
 
+                                        </div>
 
-<!-- =========================================================
-     PRODUCTOS DINÁMICOS
 
-     JavaScript generará automáticamente las tarjetas.
+                                        <!-- Imagen -->
 
-     No se escribirán manualmente los productos.
-========================================================= -->
+                                        <div class="col-12">
 
+                                            <label
+                                                for="imagenProducto"
+                                                class="form-label fw-semibold"
+                                            >
+                                                Imagen del producto
+                                            </label>
 
+                                            <input
+                                                type="file"
+                                                id="imagenProducto"
+                                                class="form-control"
+                                                accept=".jpg,.jpeg,.png,.webp"
+                                            >
 
-<section id="productos" class="container my-5">
+                                            <div class="form-text">
+                                                Formatos permitidos: JPG, JPEG, PNG y WEBP.
+                                            </div>
 
+                                            <div
+                                                id="errorImagen"
+                                                class="text-danger small mt-1"
+                                            ></div>
 
-<h2 class="text-center mb-4">
-Productos disponibles
-</h2>
+                                        </div>
 
 
+                                        <!-- Vista previa -->
 
-<div class="row" id="contenedorProductos">
+                                        <div
+                                            id="contenedorVistaPrevia"
+                                            class="col-12 text-center d-none"
+                                        >
+                                            <p class="fw-semibold mb-2">
+                                                Vista previa
+                                            </p>
 
-<!--
-Aquí aparecerán los productos generados
-desde JavaScript utilizando arreglos de objetos.
--->
+                                            <img
+                                                id="vistaPreviaImagen"
+                                                src=""
+                                                alt="Vista previa del producto"
+                                                class="img-fluid rounded shadow-sm imagen-previa"
+                                            >
+                                        </div>
 
-</div>
 
+                                        <!-- Botones -->
 
-</section>
+                                        <div class="col-12">
 
+                                            <div
+                                                class="d-grid d-md-flex justify-content-md-end gap-2 mt-3"
+                                            >
 
+                                                <button
+                                                    type="reset"
+                                                    id="btnLimpiarFormulario"
+                                                    class="btn btn-outline-secondary px-4"
+                                                >
+                                                    <i class="bi bi-eraser me-2"></i>
+                                                    Limpiar
+                                                </button>
 
+                                                <button
+                                                    type="submit"
+                                                    id="btnGuardarProducto"
+                                                    class="btn btn-primary px-4"
+                                                >
+                                                    <i class="bi bi-floppy-fill me-2"></i>
+                                                    Guardar producto
+                                                </button>
 
+                                            </div>
 
+                                        </div>
 
+                                    </div>
 
-<!-- =========================================================
-     REGISTRO DE NUEVOS DATOS
+                                </form>
 
-     El formulario permitirá ingresar nuevos registros
-     y mostrarlos dinámicamente.
-========================================================= -->
 
+                                <!-- Spinner de registro -->
 
-<section id="registro" class="container my-5">
+                                <div
+                                    id="spinnerRegistro"
+                                    class="text-center mt-4 d-none"
+                                    aria-live="polite"
+                                >
+                                    <div
+                                        class="spinner-border text-success"
+                                        role="status"
+                                    >
+                                        <span class="visually-hidden">
+                                            Guardando producto...
+                                        </span>
+                                    </div>
 
+                                    <p class="mt-2 mb-0 text-secondary">
+                                        Guardando información...
+                                    </p>
+                                </div>
 
-<h2 class="text-center mb-4">
-Registrar producto
-</h2>
+                            </div>
 
+                        </div>
 
+                    </div>
 
+                </div>
 
-<div class="row justify-content-center">
+            </div>
+        </section>
 
 
-<div class="col-md-8">
+        <!-- =================================================
+             REGISTROS DINÁMICOS
+        ================================================== -->
 
+        <section
+            id="registros"
+            class="py-5"
+        >
+            <div class="container">
 
+                <div class="text-center mb-4">
 
-<form id="formularioProducto"
-class="card p-4 shadow">
+                    <span class="text-primary fw-semibold">
+                        INFORMACIÓN REGISTRADA
+                    </span>
 
+                    <h2 class="fw-bold mt-2">
+                        Productos agregados
+                    </h2>
 
+                    <p class="text-secondary">
+                        Los nuevos registros aparecerán automáticamente.
+                    </p>
 
+                </div>
 
 
-<label class="form-label">
-Nombre del producto
-</label>
+                <div
+                    id="mensajeSinRegistros"
+                    class="alert alert-warning text-center"
+                    role="alert"
+                >
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    Todavía no se han agregado nuevos productos.
+                </div>
 
 
-<input 
-type="text"
-id="nombreProducto"
-class="form-control mb-3"
-placeholder="Ejemplo: Laptop">
+                <div
+                    id="listaRegistros"
+                    class="row g-4"
+                >
+                    <!-- Los registros se generan desde JavaScript -->
+                </div>
 
+            </div>
+        </section>
 
-<div id="errorNombre"
-class="text-danger mb-2">
-</div>
 
+        <!-- =================================================
+             CONTACTO
+        ================================================== -->
 
+        <section
+            id="contacto"
+            class="py-5 bg-light"
+        >
+            <div class="container">
 
+                <div class="row g-4 align-items-stretch">
 
+                    <!-- Información -->
 
+                    <div class="col-12 col-lg-5">
 
-<label class="form-label">
-Categoría
-</label>
+                        <div class="card h-100 border-0 shadow-sm">
 
+                            <div class="card-body p-4">
 
-<input 
-type="text"
-id="categoriaProducto"
-class="form-control mb-3"
-placeholder="Ejemplo: Tecnología">
+                                <span class="text-primary fw-semibold">
+                                    CONTÁCTANOS
+                                </span>
 
+                                <h2 class="fw-bold mt-2">
+                                    Estamos para ayudarte
+                                </h2>
 
+                                <p class="text-secondary">
+                                    Envíanos tus inquietudes o solicitudes
+                                    relacionadas con los productos disponibles.
+                                </p>
 
-<div id="errorCategoria"
-class="text-danger mb-2">
-</div>
+                                <hr>
 
+                                <div class="d-flex align-items-start gap-3 mb-3">
 
+                                    <div class="contacto-icono">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </div>
 
+                                    <div>
+                                        <h3 class="h6 mb-1">
+                                            Correo electrónico
+                                        </h3>
 
+                                        <a
+                                            href="mailto:david198900@gmail.com"
+                                            class="text-decoration-none"
+                                        >
+                                            david198900@gmail.com
+                                        </a>
+                                    </div>
 
+                                </div>
 
-<label class="form-label">
-Estado
-</label>
 
+                                <div class="d-flex align-items-start gap-3">
 
-<select 
-id="estadoProducto"
-class="form-control mb-3">
+                                    <div class="contacto-icono">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
 
+                                    <div>
+                                        <h3 class="h6 mb-1">
+                                            Teléfono
+                                        </h3>
 
-<option value="">
-Seleccione estado
-</option>
+                                        <a
+                                            href="tel:+593999017665"
+                                            class="text-decoration-none"
+                                        >
+                                            099 901 7665
+                                        </a>
+                                    </div>
 
+                                </div>
 
-<option value="Disponible">
-Disponible
-</option>
+                            </div>
 
+                        </div>
 
-<option value="Agotado">
-Agotado
-</option>
+                    </div>
 
 
+                    <!-- Formulario de contacto -->
 
-</select>
+                    <div class="col-12 col-lg-7">
 
+                        <div class="card h-100 border-0 shadow-sm">
 
+                            <div class="card-body p-4">
 
-<div id="errorEstado"
-class="text-danger mb-2">
-</div>
+                                <h2 class="h4 fw-bold mb-4">
+                                    Enviar mensaje
+                                </h2>
 
+                                <div
+                                    id="alertaContacto"
+                                    class="alert d-none"
+                                    role="alert"
+                                ></div>
 
+                                <form
+                                    id="formularioContacto"
+                                    novalidate
+                                >
 
+                                    <div class="row g-3">
 
+                                        <div class="col-12 col-md-6">
 
+                                            <label
+                                                for="nombre"
+                                                class="form-label"
+                                            >
+                                                Nombre
+                                            </label>
 
+                                            <input
+                                                type="text"
+                                                id="nombre"
+                                                class="form-control"
+                                                placeholder="Ingrese su nombre"
+                                            >
 
-<button 
-class="btn btn-primary w-100">
+                                            <div class="invalid-feedback">
+                                                Ingrese al menos 3 caracteres.
+                                            </div>
 
-Guardar producto
+                                        </div>
 
-</button>
 
+                                        <div class="col-12 col-md-6">
 
+                                            <label
+                                                for="correo"
+                                                class="form-label"
+                                            >
+                                                Correo electrónico
+                                            </label>
 
+                                            <input
+                                                type="email"
+                                                id="correo"
+                                                class="form-control"
+                                                placeholder="correo@ejemplo.com"
+                                            >
 
-</form>
+                                            <div class="invalid-feedback">
+                                                Ingrese un correo válido.
+                                            </div>
 
+                                        </div>
 
 
-</div>
+                                        <div class="col-12">
 
+                                            <label
+                                                for="asunto"
+                                                class="form-label"
+                                            >
+                                                Asunto
+                                            </label>
 
-</div>
+                                            <input
+                                                type="text"
+                                                id="asunto"
+                                                class="form-control"
+                                                placeholder="Motivo del mensaje"
+                                            >
 
+                                            <div class="invalid-feedback">
+                                                El asunto es obligatorio.
+                                            </div>
 
+                                        </div>
 
-</section>
 
+                                        <div class="col-12">
 
+                                            <label
+                                                for="mensaje"
+                                                class="form-label"
+                                            >
+                                                Mensaje
+                                            </label>
 
+                                            <textarea
+                                                id="mensaje"
+                                                class="form-control"
+                                                rows="5"
+                                                placeholder="Escriba su mensaje"
+                                            ></textarea>
 
+                                            <div class="invalid-feedback">
+                                                El mensaje debe tener al menos 10 caracteres.
+                                            </div>
 
+                                        </div>
 
 
-<!-- =========================================================
-     RESULTADOS DINÁMICOS
+                                        <div class="col-12 d-grid">
 
-     Aquí se mostrarán mensajes dependiendo
-     del estado de los datos.
-========================================================= -->
+                                            <button
+                                                type="submit"
+                                                class="btn btn-success"
+                                            >
+                                                <i class="bi bi-send-fill me-2"></i>
+                                                Enviar mensaje
+                                            </button>
 
+                                        </div>
 
-<section class="container my-5">
+                                    </div>
 
+                                </form>
 
-<h2 class="text-center">
-Registro generado
-</h2>
+                            </div>
 
+                        </div>
 
+                    </div>
 
-<div id="mensajeEstado"
-class="alert alert-info">
+                </div>
 
-Esperando información...
+            </div>
+        </section>
 
-</div>
+    </main>
 
 
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
 
-<div id="listaRegistros"
-class="row">
+    <footer class="bg-dark text-white py-4">
 
-</div>
+        <div class="container">
 
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
+            >
 
+                <div class="text-center text-md-start">
 
-</section>
+                    <p class="fw-bold mb-1">
+                        David ShopNova
+                    </p>
 
+                    <p class="small text-white-50 mb-0">
+                        Proyecto de Desarrollo de Aplicaciones Web.
+                    </p>
 
+                </div>
 
+                <div class="text-center text-md-end">
 
+                    <p class="mb-1">
+                        Estudiante: Cristian David Chiquimba Mena
+                    </p>
 
+                    <p class="small text-white-50 mb-0">
+                        © 2026 Todos los derechos reservados.
+                    </p>
 
+                </div>
 
+            </div>
 
+        </div>
 
+    </footer>
 
-<!-- =========================================================
-     CONTACTO
 
-     Conservación de validaciones trabajadas
-     anteriormente.
-========================================================= -->
+    <!-- =====================================================
+         MODAL DE DETALLES DEL PRODUCTO
+    ====================================================== -->
 
+    <div
+        class="modal fade"
+        id="modalDetalleProducto"
+        tabindex="-1"
+        aria-labelledby="tituloModalProducto"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
 
-<section id="contacto"
-class="container my-5">
+            <div class="modal-content">
 
+                <div class="modal-header">
 
-<h2 class="text-center mb-4">
-Contacto
-</h2>
+                    <h2
+                        class="modal-title fs-5"
+                        id="tituloModalProducto"
+                    >
+                        Detalles del producto
+                    </h2>
 
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    ></button>
 
+                </div>
 
-<div class="row">
+                <div class="modal-body">
 
+                    <div class="text-center mb-3">
 
+                        <img
+                            id="imagenModal"
+                            src=""
+                            alt="Imagen del producto"
+                            class="img-fluid rounded imagen-modal"
+                        >
 
-<div class="col-md-5">
+                    </div>
 
+                    <h3
+                        id="nombreModal"
+                        class="h4 fw-bold"
+                    ></h3>
 
-<p>
-<strong>Correo:</strong>
-david198900@gmail.com
-</p>
+                    <p class="mb-2">
+                        <strong>Categoría:</strong>
+                        <span id="categoriaModal"></span>
+                    </p>
 
+                    <p class="mb-2">
+                        <strong>Estado:</strong>
+                        <span id="estadoModal"></span>
+                    </p>
 
-<p>
-<strong>Teléfono:</strong>
-0999017665
-</p>
+                    <p class="mb-2">
+                        <strong>Precio:</strong>
+                        <span
+                            id="precioModal"
+                            class="text-primary fw-bold"
+                        ></span>
+                    </p>
 
+                    <p
+                        id="descripcionModal"
+                        class="text-secondary mb-0"
+                    ></p>
 
+                </div>
 
-</div>
+                <div class="modal-footer">
 
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Cerrar
+                    </button>
 
+                    <button
+                        type="button"
+                        id="btnSeleccionarProducto"
+                        class="btn btn-primary"
+                    >
+                        <i class="bi bi-check-circle me-2"></i>
+                        Seleccionar
+                    </button>
 
+                </div>
 
+            </div>
 
-<div class="col-md-7">
+        </div>
+    </div>
 
 
-<form id="formularioContacto">
+    <!-- Bootstrap JavaScript -->
 
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
+    <!-- JavaScript personalizado -->
 
-<input 
-id="nombre"
-class="form-control my-2"
-placeholder="Nombre">
-
-
-
-<div class="invalid-feedback">
-Mínimo 3 caracteres
-</div>
-
-
-
-
-
-<input 
-id="correo"
-class="form-control my-2"
-placeholder="Correo">
-
-
-
-<div class="invalid-feedback">
-Correo inválido
-</div>
-
-
-
-
-
-<input 
-id="asunto"
-class="form-control my-2"
-placeholder="Asunto">
-
-
-
-<div class="invalid-feedback">
-Obligatorio
-</div>
-
-
-
-
-
-
-<textarea 
-id="mensaje"
-class="form-control my-2"
-placeholder="Mensaje">
-
-</textarea>
-
-
-
-
-<div class="invalid-feedback">
-Mínimo 10 caracteres
-</div>
-
-
-
-
-<button class="btn btn-success w-100">
-
-Enviar mensaje
-
-</button>
-
-
-
-</form>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-</main>
-
-
-
-
-
-
-
-
-
-<!-- =========================================================
-     FOOTER
-
-     En Flask podría convertirse en:
-
-     footer.html
-========================================================= -->
-
-
-<footer>
-
-
-<p>
-Estudiante: Cristian David Chiquimba Mena
-</p>
-
-
-<p>
-Proyecto Desarrollo de Aplicaciones Web - 2026
-</p>
-
-
-</footer>
-
-
-
-
-
-
-<!-- Bootstrap JS -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-<!-- JavaScript propio -->
-
-<script src="script.js"></script>
-
-
+    <script src="script.js"></script>
 
 </body>
 
