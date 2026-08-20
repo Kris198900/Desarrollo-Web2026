@@ -1,33 +1,148 @@
 {% extends "base.html" %}
 
+
+{% block title %}
+
+Productos
+
+{% endblock %}
+
+
+
 {% block content %}
 
-<h1 class="mb-4">Módulo Productos</h1>
+
+<h1 class="mb-4">
+Módulo Productos
+</h1>
+
 
 <div class="card">
-    <div class="card-body">
 
-        <h5>Lista de productos</h5>
+<div class="card-body">
 
-        <table class="table">
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-            </tr>
 
-            <tr>
-                <td>Laptop HP</td>
-                <td>$700</td>
-            </tr>
+<h5>
+Lista de productos
+</h5>
 
-            <tr>
-                <td>Mouse inalámbrico</td>
-                <td>$25</td>
-            </tr>
 
-        </table>
 
-    </div>
+<table class="table table-striped">
+
+
+<thead>
+
+<tr>
+
+<th>
+Producto
+</th>
+
+
+<th>
+Precio
+</th>
+
+
+<th>
+Stock
+</th>
+
+
+<th>
+Estado
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+
+{% for producto in productos %}
+
+
+<tr>
+
+
+<td>
+
+{{ producto.nombre }}
+
+</td>
+
+
+
+<td>
+
+${{ producto.precio }}
+
+</td>
+
+
+
+<td>
+
+{{ producto.stock }}
+
+</td>
+
+
+
+<td>
+
+
+{% if producto.stock > 0 %}
+
+
+<span class="badge bg-success">
+
+Disponible
+
+</span>
+
+
+{% else %}
+
+
+<span class="badge bg-danger">
+
+Agotado
+
+</span>
+
+
+{% endif %}
+
+
+
+</td>
+
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+</tbody>
+
+
+</table>
+
+
+
 </div>
+
+</div>
+
 
 {% endblock %}

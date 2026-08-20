@@ -1,48 +1,176 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>David ShopNova</title>
+{% extends "base.html" %}
 
 
-<link rel="stylesheet" href="static/css/style.css">
+{% block title %}
 
-</head>
+David ShopNova
 
-
-<body>
-
-
-<h1>David ShopNova</h1>
-
-<h2>Proyecto Integrador - Semana 9</h2>
+{% endblock %}
 
 
-<p>
-Plataforma digital para visualizar productos,
-registrar información y gestionar módulos.
-</p>
+
+{% block content %}
 
 
-<h3>Módulos del sistema</h3>
-
-<ul>
-
-<li>Productos</li>
-
-<li>Clientes</li>
-
-<li>Proveedores</li>
-
-<li>Facturación</li>
-
-</ul>
+<div class="container text-center mt-5">
 
 
-</body>
+    <img 
+    src="{{ url_for('static', filename='img/david.png') }}"
+    alt="David ShopNova"
+    style="width:350px; max-width:90%;"
+    >
 
-</html>
+
+    <h1 class="mt-4">
+
+        {{ sistema|upper }}
+
+    </h1>
+
+
+
+    <h2>
+
+        Sistema de Gestión Comercial
+
+    </h2>
+
+
+
+    <p class="lead">
+
+        Plataforma digital para administrar productos,
+        clientes, proveedores y facturación.
+
+    </p>
+
+
+
+    <div class="mt-4">
+
+
+        <a href="{{ url_for('productos') }}" 
+        class="btn btn-primary btn-lg">
+
+        🛒 Productos
+
+        </a>
+
+
+
+        <a href="{{ url_for('facturacion') }}" 
+        class="btn btn-dark btn-lg ms-3">
+
+        📄 Facturación
+
+        </a>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<div class="container mt-5">
+
+
+<h3 class="text-center">
+
+Resumen del sistema
+
+</h3>
+
+
+
+<div class="row mt-4">
+
+
+
+<div class="col-md-3">
+
+<div class="card text-center shadow p-3">
+
+<h5>
+Productos
+</h5>
+
+<h2>
+{{ informacion.productos }}
+</h2>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-3">
+
+<div class="card text-center shadow p-3">
+
+<h5>
+Clientes
+</h5>
+
+<h2>
+{{ informacion.clientes }}
+</h2>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-3">
+
+<div class="card text-center shadow p-3">
+
+<h5>
+Proveedores
+</h5>
+
+<h2>
+{{ informacion.proveedores }}
+</h2>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-3">
+
+<div class="card text-center shadow p-3">
+
+<h5>
+Facturas
+</h5>
+
+<h2>
+{{ informacion.facturas }}
+</h2>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

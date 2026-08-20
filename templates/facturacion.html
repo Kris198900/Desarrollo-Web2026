@@ -1,22 +1,164 @@
 {% extends "base.html" %}
 
+
+{% block title %}
+
+Facturación
+
+{% endblock %}
+
+
+
 {% block content %}
 
-<h1>Módulo Facturación</h1>
 
-<table class="table mt-3">
+
+<h1 class="mb-4">
+
+Módulo Facturación
+
+</h1>
+
+
+
+<div class="card">
+
+
+<div class="card-body">
+
+
+
+<h5>
+
+Lista de facturas
+
+</h5>
+
+
+
+
+<table class="table table-striped mt-3">
+
+
+<thead>
 
 <tr>
-<th>Número</th>
-<th>Total</th>
+
+<th>
+Número
+</th>
+
+
+<th>
+Cliente
+</th>
+
+
+<th>
+Total
+</th>
+
+
+<th>
+Estado
+</th>
+
+
 </tr>
 
+</thead>
+
+
+
+
+<tbody>
+
+
+
+{% for factura in facturas %}
+
+
+
 <tr>
-<td>Factura 001</td>
-<td>$350</td>
+
+
+<td>
+
+{{ factura.numero }}
+
+</td>
+
+
+
+<td>
+
+{{ factura.cliente }}
+
+</td>
+
+
+
+<td>
+
+${{ factura.total }}
+
+</td>
+
+
+
+<td>
+
+
+
+{% if factura.pagada %}
+
+
+<span class="badge bg-success">
+
+Pagada
+
+</span>
+
+
+
+{% else %}
+
+
+<span class="badge bg-danger">
+
+Pendiente
+
+</span>
+
+
+
+{% endif %}
+
+
+
+</td>
+
+
 </tr>
+
+
+
+{% endfor %}
+
+
+
+</tbody>
+
 
 </table>
+
+
+
+</div>
+
+
+</div>
+
 
 
 {% endblock %}

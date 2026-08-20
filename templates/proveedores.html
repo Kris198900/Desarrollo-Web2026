@@ -1,17 +1,109 @@
 {% extends "base.html" %}
 
+
+{% block title %}
+
+Proveedores
+
+{% endblock %}
+
+
+
 {% block content %}
 
-<h1>Módulo Proveedores</h1>
 
-<div class="card mt-3">
+<h1 class="mb-4">
+
+Módulo Proveedores
+
+</h1>
+
+
+
+<div class="card">
+
+
 <div class="card-body">
 
-<p>
-Proveedor principal: Distribuidora Tecnológica XYZ
-</p>
+
+
+<h5>
+Lista de proveedores
+</h5>
+
+
+
+
+<table class="table table-striped mt-3">
+
+
+<thead>
+
+<tr>
+
+<th>
+Empresa
+</th>
+
+
+<th>
+Teléfono
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+
+{% for proveedor in proveedores %}
+
+
+
+<tr>
+
+
+<td>
+
+{{ proveedor.empresa }}
+
+</td>
+
+
+
+<td>
+
+{{ proveedor.telefono }}
+
+</td>
+
+
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+</tbody>
+
+
+</table>
+
+
 
 </div>
+
+
 </div>
+
+
 
 {% endblock %}

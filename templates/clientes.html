@@ -1,19 +1,137 @@
 {% extends "base.html" %}
 
+
+{% block title %}
+
+Clientes
+
+{% endblock %}
+
+
+
 {% block content %}
 
-<h1>Módulo Clientes</h1>
+
+<h1>
+Módulo Clientes
+</h1>
+
+
 
 <div class="card mt-3">
+
+
 <div class="card-body">
 
-<ul>
-<li>Juan Pérez</li>
-<li>María López</li>
-<li>Carlos Rodríguez</li>
-</ul>
+
+
+<h5>
+Lista de clientes registrados
+</h5>
+
+
+
+<table class="table table-striped mt-3">
+
+
+<thead>
+
+<tr>
+
+<th>
+Nombre
+</th>
+
+
+<th>
+Correo
+</th>
+
+
+<th>
+Estado
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+
+{% for cliente in clientes %}
+
+
+
+<tr>
+
+
+<td>
+
+{{ cliente.nombre }}
+
+</td>
+
+
+
+<td>
+
+{{ cliente.correo }}
+
+</td>
+
+
+
+<td>
+
+
+{% if cliente.activo %}
+
+
+<span class="badge bg-success">
+Activo
+</span>
+
+
+{% else %}
+
+
+<span class="badge bg-danger">
+Inactivo
+</span>
+
+
+{% endif %}
+
+
+
+</td>
+
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+</tbody>
+
+
+</table>
+
+
 
 </div>
+
+
 </div>
+
+
 
 {% endblock %}
